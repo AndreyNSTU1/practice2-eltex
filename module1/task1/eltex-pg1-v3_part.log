@@ -1,0 +1,213 @@
+Script started on 2026-03-17 17:47:03+07:00 [TERM="screen.xterm-256color" TTY="/dev/pts/148" COLUMNS="121" LINES="31"]
+eltex-pg1-v3@eltex-2026-spring:~$ ls
+ls	     lsblk	  lscpu	       lsinitramfs  lsirq	 lslogins     lsmod	   lsof		lsusb
+lsattr	     lsb_release  lsfd	       lsipc	    lslocks	 lsmem	      lsns	   lspci
+eltex-pg1-v3@eltex-2026-spring:~$ lsecho $HISecho $HIS
+$HISTCMD       $HISTCONTROL   $HISTFILE	     $HISTFILESIZE  $HISTSIZE
+eltex-pg1-v3@eltex-2026-spring:~$ echo $HIecho $HISTSIZecho $HISTSIZE
+1000
+eltex-pg1-v3@eltex-2026-spring:~$ echo $HISTFILESIZecho $HISTFILESIZE
+2000
+eltex-pg1-v3@eltex-2026-spring:~$ ls -ld ~/.*ls -ld ~/.*
+-rw-r--r-- 1 eltex-pg1-v3 eltex-pg1-v3	 220 Mar 30  2024 /home/eltex-pg1-v3/.bash_logout
+-rw-r--r-- 1 eltex-pg1-v3 eltex-pg1-v3	3526 Mar 30  2024 /home/eltex-pg1-v3/.bashrc
+-rw------- 1 eltex-pg1-v3 eltex-pg1-v3	  20 Mar 17 17:10 /home/eltex-pg1-v3/.lesshst
+-rw-r--r-- 1 eltex-pg1-v3 eltex-pg1-v3	   0 Mar 12 19:33 /home/eltex-pg1-v3/.log
+-rw-r--r-- 1 eltex-pg1-v3 eltex-pg1-v3	 807 Mar 30  2024 /home/eltex-pg1-v3/.profile
+-rw-r--r-- 1 eltex-pg1-v3 eltex-pg1-v3 12288 Mar  5 18:41 /home/eltex-pg1-v3/.report_part1.txt.swp
+drwx------ 2 eltex-pg1-v3 eltex-pg1-v3	4096 Mar 17 11:07 /home/eltex-pg1-v3/.ssh
+-rw------- 1 eltex-pg1-v3 eltex-pg1-v3	1136 Mar  5 18:40 /home/eltex-pg1-v3/.viminfo
+eltex-pg1-v3@eltex-2026-spring:~$ export HISTTIMEFORMAT="%F %T export HISTTIMEFORMAT="%F %T "
+eltex-pg1-v3@eltex-2026-spring:~$ datdate
+Tue Mar 17 05:48:50 PM +07 2026
+eltex-pg1-v3@eltex-2026-spring:~$ history | taihistory | tail
+    1  2026-03-17 17:48:06 echo $HISTSIZE
+    2  2026-03-17 17:48:12 echo $HISTFILESIZE
+    3  2026-03-17 17:48:19 ls -ld ~/.*
+    4  2026-03-17 17:48:38 export HISTTIMEFORMAT="%F %T "
+    5  2026-03-17 17:48:50 date
+    6  2026-03-17 17:49:02 history | tail
+eltex-pg1-v3@eltex-2026-spring:~$ tail -n 3 ~/.bash_historytail -n 3 ~/.bash_history
+tail: cannot open '/home/eltex-pg1-v3/.bash_history' for reading: No such file or directory
+eltex-pg1-v3@eltex-2026-spring:~$ echo $HISTFILecho $HISTFILE
+/home/eltex-pg1-v3/.bash_history
+eltex-pg1-v3@eltex-2026-spring:~$ export PROMPT_COMMAND='history -aexport PROMPT_COMMAND='history -a'
+eltex-pg1-v3@eltex-2026-spring:~$ whoamwhoami
+eltex-pg1-v3
+eltex-pg1-v3@eltex-2026-spring:~$ history | tail -5history | tail -5
+    7  2026-03-17 17:49:17 tail -n 3 ~/.bash_history
+    8  2026-03-17 17:50:50 echo $HISTFILE
+    9  2026-03-17 17:52:08 export PROMPT_COMMAND='history -a'
+   10  2026-03-17 17:52:17 whoami
+   11  2026-03-17 17:52:25 history | tail -5
+eltex-pg1-v3@eltex-2026-spring:~$ cat ~/.bash_historycat ~/.bash_history
+#1773744486
+echo $HISTSIZE
+#1773744492
+echo $HISTFILESIZE
+#1773744499
+ls -ld ~/.*
+#1773744518
+export HISTTIMEFORMAT="%F %T "
+#1773744530
+date
+#1773744542
+history | tail
+#1773744557
+tail -n 3 ~/.bash_history
+#1773744650
+echo $HISTFILE
+#1773744728
+export PROMPT_COMMAND='history -a'
+#1773744737
+whoami
+#1773744745
+history | tail -5
+eltex-pg1-v3@eltex-2026-spring:~$ DATE=$(date +%Y-%m-%dDATE=$(date +%Y-%m-%d)
+eltex-pg1-v3@eltex-2026-spring:~$ echo $DATecho $DATE
+2026-03-17
+eltex-pg1-v3@eltex-2026-spring:~$ TIME=$(date +%H:%M:%STIME=$(date +%H:%M:%S)
+eltex-pg1-v3@eltex-2026-spring:~$ echo $TIMecho $TIME
+17:52:57
+eltex-pg1-v3@eltex-2026-spring:~$ DATE_TIME="$DATE $TIME"DATE_TIME="$DATE $TIME"
+eltex-pg1-v3@eltex-2026-spring:~$ echo $DATE_TIMEecho $DATE_TIME
+2026-03-17 17:52:57
+eltex-pg1-v3@eltex-2026-spring:~$ ls /bin /sbin | grep '[0-9]ls /bin /sbin | grep '[0-9]'
+addr2line
+b2sum
+base32
+base64
+bunzip2
+bzip2
+bzip2recover
+c89
+c89-gcc
+c99
+c99-gcc
+cpan5.36-x86_64-linux-gnu
+cpp-12
+diff3
+enc2xs
+gcc-12
+gcc-ar-12
+gcc-nm-12
+gcc-ranlib-12
+gcov-12
+gcov-dump-12
+gcov-tool-12
+grub-menulst2cfg
+grub-mkpasswd-pbkdf2
+grub-syslinux2cfg
+h2ph
+h2xs
+i386
+linux32
+linux64
+lto-dump-12
+md5sum
+md5sum.textutils
+pdb3
+pdb3.11
+perl5.36.0
+perl5.36-x86_64-linux-gnu
+ping4
+ping6
+pl2pm
+pod2html
+pod2man
+pod2text
+pod2usage
+py3clean
+py3compile
+py3versions
+pydoc3
+pydoc3.11
+pygettext3
+pygettext3.11
+python3
+python3.11
+sha1sum
+sha224sum
+sha256sum
+sha384sum
+sha512sum
+ssh-argv0
+systemd-id128
+traceroute6
+traceroute6.db
+x86_64
+x86_64-linux-gnu-addr2line
+x86_64-linux-gnu-ar
+x86_64-linux-gnu-as
+x86_64-linux-gnu-c++filt
+x86_64-linux-gnu-cpp
+x86_64-linux-gnu-cpp-12
+x86_64-linux-gnu-dwp
+x86_64-linux-gnu-elfedit
+x86_64-linux-gnu-gcc
+x86_64-linux-gnu-gcc-12
+x86_64-linux-gnu-gcc-ar
+x86_64-linux-gnu-gcc-ar-12
+x86_64-linux-gnu-gcc-nm
+x86_64-linux-gnu-gcc-nm-12
+x86_64-linux-gnu-gcc-ranlib
+x86_64-linux-gnu-gcc-ranlib-12
+x86_64-linux-gnu-gcov
+x86_64-linux-gnu-gcov-12
+x86_64-linux-gnu-gcov-dump
+x86_64-linux-gnu-gcov-dump-12
+x86_64-linux-gnu-gcov-tool
+x86_64-linux-gnu-gcov-tool-12
+x86_64-linux-gnu-gold
+x86_64-linux-gnu-gp-archive
+x86_64-linux-gnu-gp-collect-app
+x86_64-linux-gnu-gp-display-html
+x86_64-linux-gnu-gp-display-src
+x86_64-linux-gnu-gp-display-text
+x86_64-linux-gnu-gprof
+x86_64-linux-gnu-gprofng
+x86_64-linux-gnu-ld
+x86_64-linux-gnu-ld.bfd
+x86_64-linux-gnu-ld.gold
+x86_64-linux-gnu-lto-dump
+x86_64-linux-gnu-lto-dump-12
+x86_64-linux-gnu-nm
+x86_64-linux-gnu-objcopy
+x86_64-linux-gnu-objdump
+x86_64-linux-gnu-ranlib
+x86_64-linux-gnu-readelf
+x86_64-linux-gnu-size
+x86_64-linux-gnu-strings
+x86_64-linux-gnu-strip
+dumpe2fs
+e2freefrag
+e2fsck
+e2image
+e2label
+e2mmpstatus
+e2scrub
+e2scrub_all
+e2undo
+e4crypt
+e4defrag
+fsck.ext2
+fsck.ext3
+fsck.ext4
+killall5
+mke2fs
+mkfs.ext2
+mkfs.ext3
+mkfs.ext4
+resize2fs
+tune2fs
+update-grub2
+eltex-pg1-v3@eltex-2026-spring:~$ PS1="\u@\h-$(date +%H:%M:%S)> "PS1="\u@\h-$(date +%H:%M:%S)> "
+eltex-pg1-v3@eltex-2026-spring-17:53:53>
+eltex-pg1-v3@eltex-2026-spring-17:53:53> export PSexport PS1
+eltex-pg1-v3@eltex-2026-spring-17:53:53> bash
+eltex-pg1-v3@eltex-2026-spring:~$ exexiexit
+exit
+eltex-pg1-v3@eltex-2026-spring-17:53:53> exit
+exit
+
+Script done on 2026-03-17 17:54:40+07:00 [COMMAND_EXIT_CODE="0"]

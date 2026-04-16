@@ -1,0 +1,191 @@
+Script started on 2026-04-16 14:50:21+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="127" LINES="30"]
+[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# exitcat practice2_eltex-pg1-v3_part3.log[Kapt updategit config --global init.defaultBranch mainuser.email "andrey2283445@gmail.com"[13Pname "AndreyNSTU1"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kgit config --global user.name "AndreyNSTU1"email "andrey2283445@gmail.com"[13Pname "AndreyNSTU1"
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# git config --global user.name "AndreyNSTU1"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kcat practice2_eltex-pg1-v3_part3.log[Kapt updategit config --global init.defaultBranch mainuser.email "andrey2283445@gmail.com"
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# git config --global user.email "andrey2283445@gmail.com"[13Pname "AndreyNSTU1"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kcat practice2_eltex-pg1-v3_part3.log[Kapt updategit config --global init.defaultBranch main
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# ssh-keygen -t ed25519 -f ~/.ssh/andrey_key
+[?2004lGenerating public/private ed25519 key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/andrey_key
+Your public key has been saved in /root/.ssh/andrey_key.pub
+The key fingerprint is:
+SHA256:Xy5ZgJxlxa4v3K5yUXVTAubkWaET/EBUzIqETUNYebI root@eltex-practice2-pg1-v3
+The key's randomart image is:
++--[ED25519 256]--+
+|         BBBO==.o|
+|       .o==*==+o.|
+|        +..**= ..|
+|          E.+..  |
+|        S  oo    |
+|         .o=     |
+|         .++.    |
+|        . +.o    |
+|         o.+.    |
++----[SHA256]-----+
+[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# gh auth login
+[?2004l7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> GitHub.com[0m
+[0;39m  GitHub Enterprise Server[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat account do you want to log into?[0m[0;36m GitHub.com[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> HTTPS[0m
+[0;39m  SSH[0m
+7[1A[0G[1A[0G8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;39m  HTTPS[0m
+[0;1;36m> SSH[0m
+7[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mWhat is your preferred protocol for Git operations on this host?[0m[0;36m SSH[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mUpload your SSH public key to your GitHub account?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> /root/.ssh/andrey_key.pub[0m
+[0;39m  Skip[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mUpload your SSH public key to your GitHub account?[0m[0;36m /root/.ssh/andrey_key.pub[0m
+[0G[2K[0;1;92m? [0m[0;1;99mTitle for your SSH key: [0m[0;39m(GitHub CLI) [0m[?25l[?25l7[999;999f[6n8[?25h[6neltex-practice2-pg1-v3[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1B[0G[1A[?25h[0G[2K[0;1;92m? [0m[0;1;99mTitle for your SSH key: [0m[0;36meltex-practice2-pg1-v3[0m
+7[?25l8[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m  [0;36m[Use arrows to move, type to filter][0m
+[0;1;36m> Login with a web browser[0m
+[0;39m  Paste an authentication token[0m
+7[1A[0G[1A[0G8[?25h8[0G[2K[1A[0G[2K[1A[0G[2K[1A[0G[2K[0;1;92m? [0m[0;1;99mHow would you like to authenticate GitHub CLI?[0m[0;36m Login with a web browser[0m
+
+[0;33m![0m First copy your one-time code: [0;1;39mFFDD-1B88[0m
+[0;1;39mPress Enter[0m to open github.com in your browser... 
+[0;31m![0m Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+[0;32m✓[0m Authentication complete.
+- gh config set -h github.com git_protocol ssh
+[0;32m✓[0m Configured git protocol
+[0;33m![0m Authentication credentials saved in plain text
+[0;32m✓[0m Uploaded the SSH key to your GitHub account: [0;1;39m/root/.ssh/andrey_key.pub[0m
+[0;32m✓[0m Logged in as [0;1;39mAndreyNSTU1[0m
+[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# gh auth status
+[?2004l[0;1;39mgithub.com[0m
+  [0;32m✓[0m Logged in to github.com account [0;1;39mAndreyNSTU1[0m (/root/.config/gh/hosts.yml)
+  - Active account: [0;1;39mtrue[0m
+  - Git operations protocol: [0;1;39mssh[0m
+  - Token: [0;1;39mgho_************************************[0m
+  - Token scopes: [0;1;39m'admin:public_key', 'gist', 'read:org', 'repo'[0m
+[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# gh repo create practice2-eltex --public
+[?2004l[0;32m✓[0m Created repository AndreyNSTU1/practice2-eltex on GitHub
+  https://github.com/AndreyNSTU1/practice2-eltex
+[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# mkdir ~/practice2-eltex
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~root@eltex-practice2-pg1-v3:~# cd ~/practice2-eltex
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# echo "# practice2" >> README.md
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git init
+[?2004lInitialized empty Git repository in /root/practice2-eltex/.git/
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git add README.md
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git commit -m "first commit"
+[?2004l[main (root-commit) 7cbbef3] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git branch -M main
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git remote add origin https://github.com/AndreyNSTU1/practice2-eltex.git
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git status
+[?2004lOn branch main
+nothing to commit, working tree clean
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git push -u origin main
+[?2004lUsername for 'https://github.com': Ф AndreyNSTU1
+Password for 'https://%D0AndreyNSTU1@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/AndreyNSTU1/practice2-eltex.git/'
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ls ~/.ssh
+[?2004landrey_key  andrey_key.pub  authorized_keys
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# gh ssh-key add ~/.ssh/andrey_key.pub --title "eltex-practice2"
+[?2004l[0;32m✓[0m Public key already exists on your account
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git remote -v
+[?2004lorigin	https://github.com/AndreyNSTU1/practice2-eltex.git (fetch)
+origin	https://github.com/AndreyNSTU1/practice2-eltex.git (push)
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git push -u origin main
+[?2004lUsername for 'https://github.com': AndreyB NSTU1
+Password for 'https://AndreyNSTU1@github.com': 
+[1]+  Stopped                 git push -u origin main
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git remote set-url origin git@github.com:AndreyNSTU1/practice2-eltex.git
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git remote -v
+[?2004lorigin	git@github.com:AndreyNSTU1/practice2-eltex.git (fetch)
+origin	git@github.com:AndreyNSTU1/practice2-eltex.git (push)
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ssh -T git@github.com
+[?2004lThe authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# eval "$(ssh-agent -s)"
+[?2004lAgent pid 34408
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ssh-add ~/.ssh/andrey_key
+[?2004lIdentity added: /root/.ssh/andrey_key (root@eltex-practice2-pg1-v3)
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ssh-add -l
+[?2004l256 SHA256:Xy5ZgJxlxa4v3K5yUXVTAubkWaET/EBUzIqETUNYebI root@eltex-practice2-pg1-v3 (ED25519)
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ssh -T git@github.com
+[?2004lHi AndreyNSTU1! You've successfully authenticated, but GitHub does not provide shell access.
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git push -u origin main
+[?2004lEnumerating objects: 3, done.
+Counting objects:  33% (1/3)Counting objects:  66% (2/3)Counting objects: 100% (3/3)Counting objects: 100% (3/3), done.
+Writing objects:  33% (1/3)Writing objects:  66% (2/3)Writing objects: 100% (3/3)Writing objects: 100% (3/3), 230 bytes | 230.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:AndreyNSTU1/practice2-eltex.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mkdir -p module1/task1 module1/task2 module1/task3
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git add .
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git status
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git commit -m "add module1 tasks"
+[?2004lOn branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# git push
+[?2004lEverything up-to-date
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ды[K[Kls -l
+[?2004ltotal 8
+drwxr-xr-x 5 root root 4096 Apr 16 15:08 [0m[01;34mmodule1[0m
+-rw-r--r-- 1 root root   12 Apr 16 14:55 README.md
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mkdir -p module1/task1 module1/task2 module1/task3
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# scp eltex-pg1-v3@217.71.138.1:~/practice2_eltex-pg1-v3_part*.log module1/task2/
+[?2004lkex_exchange_identification: read: Connection reset by peer
+Connection reset by 217.71.138.1 port 22
+scp: Connection closed
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# scp eltex-pg1-v3@217.71.138.1:~/practice2_eltex-pg1-v3_part*.log module1/task2/
+[?2004lkex_exchange_identification: read: Connection reset by peer
+Connection reset by 217.71.138.1 port 22
+scp: Connection closed
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ssh eltex-pg1-v3@217.71.138.1
+[?2004lkex_exchange_identification: read: Connection reset by peer
+Connection reset by 217.71.138.1 port 22
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ping 217.71.138.1
+[?2004lPING 217.71.138.1 (217.71.138.1) 56(84) bytes of data.
+64 bytes from 217.71.138.1: icmp_seq=1 ttl=64 time=1.43 ms
+64 bytes from 217.71.138.1: icmp_seq=2 ttl=64 time=0.385 ms
+64 bytes from 217.71.138.1: icmp_seq=3 ttl=64 time=0.396 ms
+64 bytes from 217.71.138.1: icmp_seq=4 ttl=64 time=0.255 ms
+64 bytes from 217.71.138.1: icmp_seq=5 ttl=64 time=0.352 ms
+64 bytes from 217.71.138.1: icmp_seq=6 ttl=64 time=0.289 ms
+64 bytes from 217.71.138.1: icmp_seq=7 ttl=64 time=0.342 ms
+64 bytes from 217.71.138.1: icmp_seq=8 ttl=64 time=0.407 ms
+64 bytes from 217.71.138.1: icmp_seq=9 ttl=64 time=0.453 ms
+64 bytes from 217.71.138.1: icmp_seq=10 ttl=64 time=0.318 ms
+64 bytes from 217.71.138.1: icmp_seq=11 ttl=64 time=0.250 ms
+64 bytes from 217.71.138.1: icmp_seq=12 ttl=64 time=0.356 ms
+^Z
+[2]+  Stopped                 ping 217.71.138.1
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ls module1/task1
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# ls ~
+[?2004leltex-pg1-v3_part3_gt50M.log  [0m[01;34metc_backup[0m         [01;31metc_gzip.tar.gz[0m                   practice2_eltex-pg1-v3_part3.log
+eltex-pg1-v3_part3.log        [01;34metc_backup_7zip[0m    [01;34mpractice2-eltex[0m
+eltex-pg1-v3_part.log         [01;34metc_backup_gzip[0m    practice2_eltex-pg1-v3_part1.log
+[01;31metc_7zip.tar.xz[0m               [01;31metc_bzip2.tar.bz2[0m  practice2_eltex-pg1-v3_part2.log
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# find ~ -maxdepth 2 -type f -name "*.log"
+[?2004l/root/practice2_eltex-pg1-v3_part3.log
+/root/practice2_eltex-pg1-v3_part2.log
+/root/practice2_eltex-pg1-v3_part1.log
+/root/eltex-pg1-v3_part3.log
+/root/eltex-pg1-v3_part3_gt50M.log
+/root/eltex-pg1-v3_part.log
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mkdir -p module1/task1 module1/task2
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mv practice2_eltex-pg1-v3_part*.log module1/task2/
+[?2004lmv: cannot stat 'practice2_eltex-pg1-v3_part*.log': No such file or directory
+[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mv /root/practice2_eltex-pg1-v3_part1.log module1/task2/
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-practice2-pg1-v3:~/practice2-eltex# mv /root/practice2_eltex-pg1-v3_part2.log module1/task2/
+[?2004l[?2004h]0;root@eltex-practice2-pg1-v3: ~/practice2-eltexroot@eltex-

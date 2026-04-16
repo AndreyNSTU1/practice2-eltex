@@ -1,0 +1,17 @@
+touch ${USER}_part3.log
+mkdir -p D1/D2/D3
+touch D1/D2/file.txt
+echo "Hello, world!" > D1/D2/file.txt
+ln D1/D2/file.txt D1/D2/D3/file_hard.txt
+ln -s ../file.txt D1/D2/D3/file_sym.txt
+ls -l D1/D2/D3/
+mv D1/D2/file.txt D1/
+cat D1/D2/D3/file_hard.txt
+cat D1/D2/D3/file_sym.txt
+rm -rf D1/D2
+find / -type f -size +20M 2>/dev/null > ${USER}_part3_gt50M.log
+du -h $(head -1 ${USER}_part3_gt50M.log)
+find ~ -type f -mtime -1 2>/dev/null
+which find
+file $(which find)
+file /boot/initrd.img*
