@@ -1,7 +1,7 @@
 ## Скриншоты
 
 ### Сборка модуля
-![Сборка](screenshots/make.png)
+![Сборка](make.png)
 
 ### Загрузка и вывод dmesg
 ![insmod](screenshots/insmod.png)
