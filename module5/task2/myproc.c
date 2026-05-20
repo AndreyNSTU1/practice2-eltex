@@ -11,7 +11,7 @@
 #define BUFFER_SIZE 256
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Твоё Имя Фамилия");
+MODULE_AUTHOR("Белетков Андрей");
 MODULE_DESCRIPTION("Kernel module for exchanging data with userspace via procfs");
 MODULE_VERSION("1.0");
 
