@@ -2,19 +2,35 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <semaphore.h>
+#include <time.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
 #include <errno.h>
 
-// Извлекает из строки минимальное и максимальное число
+void sem_wait(int semid) {
+    struct sembuf op = {0, -1, 0};
+    if (semop(semid, &op, 1) == -1) {
+        perror("semop wait");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void sem_post(int semid) {
+    struct sembuf op = {0, 1, 0};
+    if (semop(semid, &op, 1) == -1) {
+        perror("semop post");
+        exit(EXIT_FAILURE);
+    }
+}
+
 void process_line(const char *line) {
     int num, min, max, first = 1;
     const char *p = line;
     while (1) {
         char *end;
         num = strtol(p, &end, 10);
-        if (p == end) break; // чисел больше нет
+        if (p == end) break;
         if (first) {
             min = max = num;
             first = 0;
@@ -36,48 +52,46 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
     const char *filename = argv[1];
+    srand(time(NULL) ^ getpid());
 
-    // Имя семафора, как у производителя
-    char sem_name[256];
-    snprintf(sem_name, sizeof(sem_name), "/sem_%s", filename);
-    for (char *p = sem_name; *p; p++) if (*p == '/') *p = '_';
+    key_t key = ftok(filename, 1);
+    if (key == -1) {
+        perror("ftok");
+        exit(EXIT_FAILURE);
+    }
 
-    sem_t *sem = sem_open(sem_name, O_CREAT, 0644, 1);
-    if (sem == SEM_FAILED) {
-        perror("sem_open");
+    int semid = semget(key, 1, 0);
+    if (semid == -1) {
+        perror("semget (запустите сначала производителя)");
         exit(EXIT_FAILURE);
     }
 
     printf("Потребитель %d запущен (файл: %s). Ожидание строк...\n", getpid(), filename);
 
     while (1) {
-        sem_wait(sem); // захватываем файл
+        sem_wait(semid);
 
         FILE *file = fopen(filename, "r+");
         if (!file) {
-            sem_post(sem);
+            sem_post(semid);
             perror("fopen");
             sleep(1);
             continue;
         }
 
-        // Проверяем, есть ли хотя бы одна строка
         char first_line[256];
         if (fgets(first_line, sizeof(first_line), file) == NULL) {
-            // Файл пуст
             fclose(file);
-            sem_post(sem);
+            sem_post(semid);
             sleep(1);
             continue;
         }
 
-        // Читаем оставшуюся часть файла
         char rest[1024 * 10];
         size_t rest_len = fread(rest, 1, sizeof(rest) - 1, file);
         rest[rest_len] = '\0';
         fclose(file);
 
-        // Перезаписываем файл только оставшейся частью (удаляем первую строку)
         file = fopen(filename, "w");
         if (file) {
             fwrite(rest, 1, rest_len, file);
@@ -86,14 +100,11 @@ int main(int argc, char *argv[]) {
             perror("fopen write");
         }
 
-        sem_post(sem); // освобождаем файл
+        sem_post(semid);
 
-        // Обрабатываем удалённую строку
         process_line(first_line);
-
-        sleep(rand() % 2); // небольшая задержка
+        sleep(rand() % 2);
     }
 
-    sem_close(sem);
     return 0;
 }

@@ -2,17 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-#include <semaphore.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/sem.h>
+#include <errno.h>
 
 #define MAX_NUMBERS 10
 #define MAX_NUMBER_VALUE 100
 
-// Генерация случайной строки из случайного количества случайных чисел
+union semun {
+    int val;
+    struct semid_ds *buf;
+    unsigned short *array;
+};
+
 void generate_line(char *buffer, size_t size) {
-    int count = rand() % MAX_NUMBERS + 1; // от 1 до MAX_NUMBERS
+    int count = rand() % MAX_NUMBERS + 1;
     char *ptr = buffer;
     int len = 0;
     for (int i = 0; i < count; i++) {
@@ -20,10 +26,25 @@ void generate_line(char *buffer, size_t size) {
         len += snprintf(ptr + len, size - len, "%d ", num);
         if (len >= size - 1) break;
     }
-    // Заменяем последний пробел на '\n'
     if (len > 0 && buffer[len-1] == ' ') buffer[len-1] = '\n';
     else buffer[len] = '\n';
     buffer[len] = '\0';
+}
+
+void sem_wait(int semid) {
+    struct sembuf op = {0, -1, 0};
+    if (semop(semid, &op, 1) == -1) {
+        perror("semop wait");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void sem_post(int semid) {
+    struct sembuf op = {0, 1, 0};
+    if (semop(semid, &op, 1) == -1) {
+        perror("semop post");
+        exit(EXIT_FAILURE);
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -32,41 +53,55 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
     const char *filename = argv[1];
-    srand(time(NULL) ^ getpid()); // уникальный seed для каждого процесса
+    srand(time(NULL) ^ getpid());
 
-    // Формируем имя семафора на основе имени файла
-    char sem_name[256];
-    snprintf(sem_name, sizeof(sem_name), "/sem_%s", filename);
-    // Заменяем '/' в имени файла на '_', т.к. слэш недопустим в имени семафора
-    for (char *p = sem_name; *p; p++) if (*p == '/') *p = '_';
-
-    sem_t *sem = sem_open(sem_name, O_CREAT, 0644, 1);
-    if (sem == SEM_FAILED) {
-        perror("sem_open");
+    key_t key = ftok(filename, 1);
+    if (key == -1) {
+        perror("ftok");
         exit(EXIT_FAILURE);
     }
 
+    int semid = semget(key, 1, IPC_CREAT | IPC_EXCL | 0666);
+    if (semid == -1) {
+        if (errno == EEXIST) {
+            semid = semget(key, 1, 0);
+            if (semid == -1) {
+                perror("semget");
+                exit(EXIT_FAILURE);
+            }
+        } else {
+            perror("semget");
+            exit(EXIT_FAILURE);
+        }
+    } else {
+        union semun arg;
+        arg.val = 1;
+        if (semctl(semid, 0, SETVAL, arg) == -1) {
+            perror("semctl SETVAL");
+            exit(EXIT_FAILURE);
+        }
+    }
+
     printf("Производитель запущен (файл: %s). Генерация строк...\n", filename);
-    for (int i = 0; i < 5; i++) { // для примера генерируем 5 строк, можно зациклить
+
+    for (int i = 0; i < 5; i++) {
         char line[256];
         generate_line(line, sizeof(line));
 
-        // Критическая секция – запись в файл
-        sem_wait(sem);
+        sem_wait(semid);
         FILE *file = fopen(filename, "a");
         if (file) {
             fputs(line, file);
             fclose(file);
             printf("Записано: %s", line);
+            fflush(stdout);
         } else {
             perror("fopen");
         }
-        sem_post(sem);
+        sem_post(semid);
 
-        sleep(rand() % 2 + 1); // пауза между генерациями
+        sleep(rand() % 2 + 1);
     }
 
-    sem_close(sem);
-    // Не удаляем семафор, он может понадобиться другим процессам
     return 0;
 }
