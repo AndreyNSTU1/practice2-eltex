@@ -6,8 +6,7 @@
 ### Загрузка и вывод dmesg
 ![insmod](screenshots/insmod.png)
 
-### Информация о модуле
+### Информация о модуле и выгрузка модуля
 ![modinfo](screenshots/modinfo.png)
 
-### Выгрузка модуля
-![rmmod](screenshots/rmmod.png)
+
