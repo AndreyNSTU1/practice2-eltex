@@ -3,10 +3,10 @@
 ## Скриншоты
 
 ### Сборка модуля
-![Сборка](make.png)
+![Сборка](screenshots/make.png)
 
 ### Работа с /proc (запись и чтение)
-![cat] (cat.png)
+![cat](cat.png)
 
 ### Логи ядра (dmesg)
-![dmesg](dmesg.png)
+![dmesg](screenshots/dmesg.png)
