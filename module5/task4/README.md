@@ -7,7 +7,7 @@
 ![Сборка](make.png)
 
 ### Чтение из устройства (cat /dev/chardev)
-![Тест чтения](cat_test.png)
+![Тест чтения](cat.png)
 
 ### Логи ядра (dmesg)
 ![dmesg](dmesg.png)
